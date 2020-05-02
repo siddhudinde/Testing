@@ -1,0 +1,85 @@
+#include <iostream>
+using namespace std;
+int stack[100],i,choice=0,top=-1,n;
+void push();
+void pop();
+void show();
+int main()
+{
+    cout<<"Enter the size of element to be insert"<<endl;
+    cin>>n;
+    
+    while(choice != 4)
+    {
+        cout<<"Enter the choice form the below...\n"<<endl;
+        cout<<"1.push \n 2.pop\n 3.show \n 4. exit "<<endl;
+        cout<<"Enter your choice :\n";
+        cin>>choice;
+        
+        switch(choice)
+        {
+         case 1:  
+                {   
+                    push();  
+                    break;  
+                }  
+               case 2:  
+                {  
+                    pop();  
+                    break;  
+                }  
+                case 3:  
+                {  
+                    show();  
+                    break;  
+                }  
+                case 4:   
+                {  
+                    cout<<"Exiting...."<<endl;  
+                    break;   
+                }  
+                default:  
+                {  
+                    cout<<"Please Enter valid choice "<<endl;  
+                }   
+            };  
+    
+    }
+}
+void push()
+{
+    int value;
+    if (top==n)
+    cout<<"overflow condition";
+    else
+    {
+    cout<<"Enter the value do you want :";
+    cin>>value;
+    top=top-1;
+    stack[top]=value;
+    }
+}
+	void pop()
+	{
+		if(top==-1)
+		{
+			cout<<"Stack underflow"<<endl;
+		}
+		else
+		{
+			top=top-1;
+			cout<<"Pop done"<<endl;
+		}
+	}
+	void show()
+	{
+		
+        for (i=top;i>=0;i--)  
+        {  
+            cout<<"\nstack[i]";  
+        }  
+        if(top == -1)   
+        {  
+            cout<<"Stack is empty";  
+        } 
+	}
